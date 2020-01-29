@@ -1,0 +1,92 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{makeidx}
+\usepackage{float}
+
+\newcommand{\supp}{\mathrm{supp}}
+
+\usetikzlibrary{arrows,chains,matrix,positioning,scopes}
+\makeatletter
+\tikzset{join/.code=\tikzset{after node path={%
+\ifx\tikzchainprevious\pgfutil@empty\else(\tikzchainprevious)%
+edge[every join]#1(\tikzchaincurrent)\fi}}}
+\makeatother
+
+\tikzset{>=stealth',every on chain/.append style={join},
+         every join/.style={->}}
+\tikzstyle{labeled}=[execute at begin node=$\scriptstyle,
+   execute at end node=$]
+
+\newtheorem{defi}{Definition}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{rem}{Remark}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{expl}{Example}[section]
+
+\usepackage{mathpazo}
+
+\title{Expansion detected by cycles}
+\author{Kai Renken \and Dmitry Kozlov}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{On the hitting number of sets}
+
+\begin{defi}
+Let $S$ be a set and $\mathcal{F}\subseteq 2^S$ a family of subsets. Then
+\[
+\tau(\mathcal{F})\coloneqq\min\{|P|:P\subseteq S\text{, }P\cap F\neq\emptyset\text{, for all }F\in\mathcal{F}\}
+\]
+is called the \textbf{hitting number} of $\mathcal{F}$.
+\end{defi}
+
+\begin{defi}
+Let $S$ be a set and $\mathcal{F}\subseteq 2^S$ a family of subsets. Then
+\[
+\Delta_{\mathcal{F}}\coloneqq\left\{S\subseteq\mathcal{F}:\bigcap\limits_{F\in S}F\neq\emptyset\right\}
+\]
+is called the \textbf{cut complex} of $\mathcal{F}$.
+\end{defi}
+
+\begin{defi}
+Let $X$ be a simplicial complex on the vertex set $V$ and $S\subseteq X$ a set of simplices of $X$. Then $S$ is called a \textbf{covering} of $X$ if for every vertex $v\in V$ there exists a simplex $\sigma\in S$, such that $v\in\sigma$.
+\end{defi}
+
+\begin{prop}
+Let $S$ be a set and $\mathcal{F}\subseteq 2^S$ a family of subsets. Then we have:
+\[
+\tau(\mathcal{F})=\min\{|S|:S\text{ is a covering of }\Delta_{\mathcal{F}}\}
+\]
+\begin{proof}
+
+\end{proof}
+\end{prop}
+
+\begin{thebibliography}{9}
+
+\end{thebibliography}
+
+\end{document}
+
+
