@@ -13,6 +13,7 @@
 \usepackage{float}
 
 \newcommand{\supp}{\mathrm{supp}}
+\newcommand{\Z}{\mathbb{Z}}
 
 \usetikzlibrary{arrows,chains,matrix,positioning,scopes}
 \makeatletter
@@ -53,36 +54,37 @@ edge[every join]#1(\tikzchaincurrent)\fi}}}
 
 \section{On the hitting number of sets}
 
-\begin{defi}
 Let $S$ be a set and $\mathcal{F}\subseteq 2^S$ a family of subsets. Then
 \[
 \tau(\mathcal{F})\coloneqq\min\{|P|:P\subseteq S\text{, }P\cap F\neq\emptyset\text{, for all }F\in\mathcal{F}\}
 \]
-is called the \textbf{hitting number} of $\mathcal{F}$.
-\end{defi}
-
-\begin{defi}
-Let $S$ be a set and $\mathcal{F}\subseteq 2^S$ a family of subsets. Then
+is called the \textbf{hitting number} of $\mathcal{F}$ and
 \[
 \Delta_{\mathcal{F}}\coloneqq\left\{S\subseteq\mathcal{F}:\bigcap\limits_{F\in S}F\neq\emptyset\right\}
 \]
-is called the \textbf{cut complex} of $\mathcal{F}$.
-\end{defi}
-
-\begin{defi}
-Let $X$ be a simplicial complex on the vertex set $V$ and $S\subseteq X$ a set of simplices of $X$. Then $S$ is called a \textbf{covering} of $X$ if for every vertex $v\in V$ there exists a simplex $\sigma\in S$, such that $v\in\sigma$.
-\end{defi}
-
-\begin{prop}
-Let $S$ be a set and $\mathcal{F}\subseteq 2^S$ a family of subsets. Then we have:
+is called the \textbf{cut complex} of $\mathcal{F}$.\\
+\\
+Let now $X$ be a simplicial complex on the vertex set $V$ and $S\subseteq X$ a set of simplices of $X$, then we call $S$ a \textbf{covering} of $X$ if for every vertex $v\in V$ there exists a simplex $\sigma\in S$, such that $v\in\sigma$.\\
+\\
+The first obvious observation is that for every set $S$ and every family of subsets $\mathcal{F}\subseteq 2^S$ we have:
 \[
 \tau(\mathcal{F})=\min\{|S|:S\text{ is a covering of }\Delta_{\mathcal{F}}\}
 \]
-\begin{proof}
 
-\end{proof}
-\end{prop}
+\section{The cut complex for families of cycles}
 
+Denote the complete simplex on $n$ vertices by $\Delta^{[n]}$ and always work with coefficients in $\Z_2$. Let now $\varphi\in C^k(\Delta^{[n]})$ be a $k$-cochain. Then we can define the family
+\[
+T_{\varphi}\coloneqq\{\supp(\partial\sigma):\sigma\in\supp(\delta\varphi)\}
+\]
+where the sets are the supports of the boundaries of the simplices in the support of the coboundary of $\varphi$.\\
+\\
+Let us now study the structure of the cut complex of $T_{\varphi}$. First, we see that
+\[
+H_i(\Delta_{T_{\varphi}})=0
+\]
+holds for all $i\geq 2$, as follows:\\
+If we have two $2$-simplices $\{v_1,v_2,v_3\}$ and $\{v_2,v_3,v_4\}$ in $\Delta_{T_{\varphi}}$ which share an edge $\{v_2,v_3\}$, then the $3$-simplex $\{v_1,v_2,v_3,v_4\}$ has to be contained in $\Delta_{T_{\varphi}}$ as well.
 \begin{thebibliography}{9}
 
 \end{thebibliography}
