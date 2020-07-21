@@ -52,40 +52,46 @@ edge[every join]#1(\tikzchaincurrent)\fi}}}
 
 \end{abstract}
 
-\section{On the hitting number of sets}
+\section{Alternative Cheeger constant of the simplex}
 
-Let $S$ be a set and $\mathcal{F}\subseteq 2^S$ a family of subsets. Then
+\begin{thm}
+Let $n$ not be a power of $2$, then we have:
 \[
-\tau(\mathcal{F})\coloneqq\min\{|P|:P\subseteq S\text{, }P\cap F\neq\emptyset\text{, for all }F\in\mathcal{F}\}
-\]
-is called the \textbf{hitting number} of $\mathcal{F}$ and
+\gamma_1(\Delta^{[n]})=\frac{n}{3}
+\] 
+\begin{proof}
+Since $n$ is not a power of $2$ we can write it as $n=c(2t+1)$. Now consider the staircase graph $G_n(\lambda)$ given by the partition $\lambda=c\cdot\text{cor}(t)$. Since $G_n(\lambda)$ is bipartite we can partition the vertices of $G_n(\lambda)$ as $[n]=A\cup B\cup C$, with $A=\{v_1,\ldots,v_{ct}\}$, $B=\{w_1,\ldots,w_{ct}\}$ and $C=\{x_1,\ldots,x_c\}$, such that $C$ is the set of all isolated vertices and all edges of $G_n(\lambda)$ are contained in $E_{G_n(\lambda)}(A,B)$.\\
+Construct a family of edge-disjoint cycles of the vertex set $[n]$ as follows:\\
+For all edges $(v_i,w_j)$ satisfying $i+j\leq ct$, such that $(v_{ct-j+1},w_{ct-i+1})$ is not an edge in $G_n(\lambda)$ consider the cycle
 \[
-\Delta_{\mathcal{F}}\coloneqq\left\{S\subseteq\mathcal{F}:\bigcap\limits_{F\in S}F\neq\emptyset\right\}
+C_{ij}\coloneqq\{(v_i,w_j),(v_{ct-j+1},w_{ct-i+1}),(v_i,v_{ct-j+1}),(w_j,w_{ct-i+1})\}
 \]
-is called the \textbf{cut complex} of $\mathcal{F}$.\\
-\\
-Let now $X$ be a simplicial complex on the vertex set $V$ and $S\subseteq X$ a set of simplices of $X$, then we call $S$ a \textbf{covering} of $X$ if for every vertex $v\in V$ there exists a simplex $\sigma\in S$, such that $v\in\sigma$.\\
-\\
-The first obvious observation is that for every set $S$ and every family of subsets $\mathcal{F}\subseteq 2^S$ we have:
+For all edges $e_{ij}=(v_i,w_j)$ satisfying $i+j\leq ct+1$, such that $e'_{ij}=(v_{ct-j+1},w_{ct-i+1})$ is also an edge in $G_n(\lambda)$ (for $i+j=ct+1$ they are equal), the set
 \[
-\tau(\mathcal{F})=\min\{|S|:S\text{ is a covering of }\Delta_{\mathcal{F}}\}
+D\coloneqq\{e_{ij}, e'_{ij}:i+j\leq ct+1\text{, }e_{ij}\text{ and }e'_{ij}\text{ are edges in }G_n(\lambda)\}
+\] can be partitioned into $t$ sets $B_1,\ldots,B_t$, each containing $c^2$ edges:
+\[
+B_k\coloneqq\{(v_i,w_j):(k-1)c+1\leq i\leq kc\text{, }c(t-k)+1\leq j\leq c(t-k+1)\}
 \]
+Now, each vertex from $A\cup B$ is only contained in edges from exactly one of the sets $B_k$. This means that for any $l=1,\ldots,c$ and any pair of edges $(v_i,w_j)\in B_{k_1}$ and $(v_{i'},w_{j'})\in B_{k_2}$ ($k_1\neq k_2$) the cycles $\{(v_i,w_j),(v_i,x_l),(w_j,x_l)\}$ and $\{(v_{i'},w_{j'}),(v_{i'},x_l),(w_{j'},x_l)\}$ are edge-disjoint. Furthermore, each set $B_k$ itself is a complete balanced bipartite graph (i.e. a graph in which each of the $c$ vertices from $A$ is adjecent to each of the $c$ vertices from $B$) so we can partition it into $c$ sets $B_k^1,\ldots,B_k^c$, such that all edges in $B_k^l$ are disjoint, for every $l=1,\ldots,c$. Thus, the cycles $\{(v_i,w_j),(v_i,x_l),(w_j,x_l)\}$ are edge-disjoint for all $(v_i,w_j)\in B_k^l$. The family of all these cycles united with the cycles $C_{ij}$ we defined before gives a family of edge-disjoint cycles, such that every edge of $G_n(\lambda)$ is contained in exactly one cycle and every cycle containes exactly one of the edges from $G_n(\lambda)$. Hence, the hitting number of this 
+\end{proof}
+\end{thm}
 
-\section{The cut complex for families of cycles}
+\begin{thm}
+Let $k+2$ devide $n$, then we have:
+\[
+\gamma_k(\Delta^{[n]})=\frac{n}{k+2}
+\]
+\begin{proof}
+Follows immediately from \cite{1}
+\end{proof}
+\end{thm}
 
-Denote the complete simplex on $n$ vertices by $\Delta^{[n]}$ and always work with coefficients in $\Z_2$. Let now $\varphi\in C^k(\Delta^{[n]})$ be a $k$-cochain. Then we can define the family
-\[
-T_{\varphi}\coloneqq\{\supp(\partial\sigma):\sigma\in\supp(\delta\varphi)\}
-\]
-where the sets are the supports of the boundaries of the simplices in the support of the coboundary of $\varphi$.\\
-\\
-Let us now study the structure of the cut complex of $T_{\varphi}$. First, we see that
-\[
-H_i(\Delta_{T_{\varphi}})=0
-\]
-holds for all $i\geq 2$, as follows:\\
-If we have two $2$-simplices $\{v_1,v_2,v_3\}$ and $\{v_2,v_3,v_4\}$ in $\Delta_{T_{\varphi}}$ which share an edge $\{v_2,v_3\}$, then the $3$-simplex $\{v_1,v_2,v_3,v_4\}$ has to be contained in $\Delta_{T_{\varphi}}$ as well.
+
+
 \begin{thebibliography}{9}
+
+\bibitem{1} Dmitry N. Kozlov, Roy Meshulam; Quantitative aspects of acyclicity
 
 \end{thebibliography}
 
