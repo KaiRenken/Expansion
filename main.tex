@@ -54,6 +54,13 @@ edge[every join]#1(\tikzchaincurrent)\fi}}}
 
 \section{Basics}
 
+\begin{thm}[The cycle detection theorem]
+
+\begin{proof}
+
+\end{proof}
+\end{thm}
+
 \begin{defi}
 Let \(X\) be a simplicial complex and \(k\geq 1\). Furthermore, let \(\mathcal{F}\subset C_k(X)\) be a family of cycles, such that their supports are pairwise disjoint (i.e. \(\supp(F)\cap\supp(F')=\emptyset\) for all \(F,F'\in\mathcal{F}\), satisfying \(F\neq F'\)) and let
 \begin{small}
@@ -81,7 +88,7 @@ is the collection of all families of cycles in \(C_k(X)\) with pairwise disjoint
 \begin{prop}\label{proposition1}
 Let \(X\) be a simplicial complex and \(k\geq 1\), then we have:
 \[
-h_k(X)\leq\rho_k(X)\leq\gamma_k(X)
+h_k(X)\leq\gamma_k(X)
 \]
 \begin{proof}
 Let \(\mathcal{F}\subset C_k(X)\) be a family of cycles with pairwise disjoint supports and \(\varphi\in P(\mathcal{F})\). Then we have \(\varphi\in P'(\mathcal{F})\) and \(\tau(\mathcal{F})=|\mathcal{F}|\) and we immediately get \(\rho_{\mathcal{F}}\leq\gamma_{\mathcal{F}}\), so we have \(\rho_k(X)\leq\gamma_k(X)\). Let now \(\mathcal{F}\subset C_k(X)\) be an arbitrary family of cycles and \(\varphi\in P'(\mathcal{F})\). Then we have \(\langle\varphi,F\rangle=1\) for all \(F\in\mathcal{F}\) so we can use the cycle detection theorem and we get \(\|\varphi\|_{csy}\geq\tau(\mathcal{F})\). This implies \(\|\varphi\|_{exp}\leq\rho_{\mathcal{F}}\) and we have \(h_k(X)\leq\rho_k(X)\).
