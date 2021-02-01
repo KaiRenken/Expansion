@@ -129,7 +129,7 @@ Let $k+2$ devide $n$, then we have:
 \gamma_k(\Delta^{[n]})=\frac{n}{k+2}
 \]
 \begin{proof}
-
+See \cite{1}.
 \end{proof}
 \end{thm}
 
@@ -154,7 +154,7 @@ B_k\coloneqq\{(v_i,w_j):(k-1)c+1\leq i\leq kc\text{, }c(t-k)+1\leq j\leq c(t-k+1
 Now, each vertex from $A\cup B$ is only contained in edges from exactly one of the sets $B_k$. This means that for any $l=1,\ldots,c$ and any pair of edges $(v_i,w_j)\in B_{k_1}$ and $(v_{i'},w_{j'})\in B_{k_2}$ ($k_1\neq k_2$) the supports of the cycles $(v_i,w_j)+(v_i,x_l)+(w_j,x_l)$ and $(v_{i'},w_{j'})+(v_{i'},x_l)+(w_{j'},x_l)$ are disjoint. Furthermore, each set $B_k$ itself is a complete balanced bipartite graph (i.e. a graph in which each of the $c$ vertices from $A$ is adjacent to each of the $c$ vertices from $B$) so we can partition it into $c$ sets $B_k^1,\ldots,B_k^c$, such that all edges in $B_k^l$ are disjoint, for every $l=1,\ldots,c$. Thus, the supports of the cycles $(v_i,w_j)+(v_i,x_l)+(w_j,x_l)$ are pairwise disjoint for all $(v_i,w_j)\in B_k^l$. The family of all these cycles united with the cycles $C_{ij}$ we defined before gives a family of cycles with pairwise disjoint supports, such that every edge of $G_n(\lambda)$ is contained in exactly one cycle and every cycle containes exactly one of the edges from $G_n(\lambda)$. Since the number of cycles in this family equals the number of edges in $G_n(\lambda)$ and we know that we have $h(G_n(\lambda))=\frac{n}{3}$ by \cite{2} (Theorem 4.2.) we get $\gamma_1(\Delta^{[n]})\leq\frac{n}{3}$ and by Proposition \ref{proposition2} we have $\gamma_1(\Delta^{[n]})=\frac{n}{3}$.
 \end{proof}
 \end{thm}
-
+i
 \begin{expl}
 Let $n=10$ and consider the staircase graph $G_{10}(\lambda)$ with $\lambda=2\cdot\text{cor}(2)$ as shown in Figure \ref{figure1:Figure 1} ($v_i$ and $w_j$ are adjacent if and only if there is a box in column $i$ and row $j$ and the $x_i$'s are isolated vertices). Then, intuitively speaking, for every edge represented by a box for which there is no box on the other side of the diagonal
 \[
@@ -215,7 +215,23 @@ Let $n$ be a power of $2$, then we have:
 \gamma_1(\Delta^{[n]})\leq\frac{n^3-4n}{3n^2-24}
 \]
 \begin{proof}
-
+Let $n=2^k$. Then we can write $n-1=2t+1$ with $t$ being odd. Now construct a staircase graph as follows:
+Consider the staircase graph $G_n(\lambda)$ with $\lambda=\text{cor}(t)$ and a partitioning of its vertices $[n]=A\cup B\cup C$ with $A=\{v_1,\ldots,v_t\}$, $B=\{w_1,\ldots,w_t\}$ and $C=\{x_1,x_2\}$ as described in the proof of Theorem \ref{theorem3}. Let $E'$ be the set of edges in $G_n(\lambda)$. Now define
+\[
+E\coloneqq\{(v_2,w_t),(v_4,w_{t-2}),(v_6,w_{t-4}),\ldots,(v_{t-1},w_3)\},
+\]
+then we can construct a family of pairwise edge-disjoint cycles the same way we did in the proof of Theorem \ref{theorem3} which satisfy the conditions of the cycle detection theorem and we get
+\[
+|E|=\frac{n^2}{8}-1
+\]
+and
+\[
+|T(G)|=\frac{n^3-4n}{24}
+\]
+so we have
+\[
+\gamma_1(\Delta^{[n]})\leq\frac{|T(G)|}{|E|}=\frac{n^3-4n}{3n^2-24}
+\]
 \end{proof}
 \end{thm}
 
