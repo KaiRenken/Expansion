@@ -14,6 +14,7 @@
 
 \newcommand{\supp}{\mathrm{supp}}
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\im}{\mathrm{Im}}
 
 \usetikzlibrary{arrows,chains,matrix,positioning,scopes}
 \makeatletter
@@ -49,13 +50,63 @@ edge[every join]#1(\tikzchaincurrent)\fi}}}
 
 
 \begin{abstract}
-
+In \cite{3} Meshulam and Wallach proved the estimate
+\[
+\frac{n}{k+2}\leq h_k(\Delta^{[n]})\leq\left\lceil\frac{n}{k+2}\right\rceil
+\]
+for the $k$-th Cheeger constant of the simplex on $n$-vertices $\Delta^{[n]}$. They also showed that the lower bound is archieved if $n$ is divisible by $k+2$. Later in \cite{2} Kozlov showed, that for the first Cheeger constant of a simplex this lower bound is even archieved if $n$ is not a power of $2$ and gave an estimate for the case when $n$ is a power of $2$.\\
+In this paper we introduce the disjoint cycle expansion, which is a concept slightly different from the Cheeger constant in its definition, but easier to handle. We show that all exact values and estimates which are known for the Cheeger constant of the simplex stay the same for the disjoint cycle expansion. 
 \end{abstract}
 
-\section{Basics}
+\section{Introduction}
+
+Let us quickly recall the notion of the $k$-th Cheeger constant of a polyhedral complex. Through this paper we always consider $\mathbb{Z}_2$-coefficients.\\
+
+\begin{defi}
+Let $X$ be a polyhedral complex and $k\geq 1$. We denote the \textbf{norm} of a $k$-cochain $\varphi\in C^k(X)$ by $\|\varphi\|\coloneqq |\supp(\varphi)|$ and we call
+\[
+\|\varphi\|_{csy}\coloneqq\min\limits_{\psi\in C^{k-1}(X)}\|\delta^{k-1}(\psi)+\varphi\|
+\]
+the \textbf{cosystolic norm} of $\varphi$. Then we can define the $k$-th Cheeger constant of $X$ by:
+\[
+h_k(X)\coloneqq\min_{\substack{\varphi\in C^k(X)\\\varphi\notin\im(\delta^{k-1})}}\frac{\|\delta^k(\varphi)\|}{\|\varphi\|_{csy}}
+\]
+\end{defi}
+
+Now, we can define the $k$-th disjoint cycle expansion of a polyhedral complex.
+
+\begin{defi}
+Let $X$ be a polyhedral complex and $k\geq 1$. Furthermore, let $\mathcal{F}\subset C_k(X)$ be a family of cycles, such that their supports are pairwise disjoint (i.e. $\supp(F)\cap\supp(F')=\emptyset$ for all $F,F'\in\mathcal{F}$, satisfying $F\neq F'$) and let
+\begin{small}
+\[
+P(\mathcal{F})\coloneqq\{\varphi\in C^k(X):|\supp(\varphi)\cap\supp(F)|=1\text{ for all }F\in\mathcal{F}\text{ and }\supp(\varphi)\subset\bigcup\limits_{F\in\mathcal{F}}\supp(F)\}
+\]
+\end{small}
+denote the set of all cochains constructed by all possible choices of one simplex per cycle in the family $\mathcal{F}$. Then we define
+\[
+\gamma_{\mathcal{F}}\coloneqq\frac{\min\limits_{\varphi\in P(\mathcal{F})}\|\delta^k(\varphi)\|}{|\mathcal{F}|}
+\]
+and we call
+\[
+\gamma_k(X)\coloneqq\min\limits_{\mathcal{F}\in\mathfrak{C}}\gamma_{\mathcal{F}}
+\]
+the $k$-th \textbf{disjoint cycle expansion} of $X$, where
+\begin{small}
+\[
+\mathfrak{C}\coloneqq\{\mathcal{F}\subset C_k(X):F\text{ is a cycle and }\supp(F)\cap\supp(F')=\emptyset\text{ for all }F,F'\in\mathcal{F}\:(F\neq F')\}
+\]
+\end{small}
+is the collection of all families of cycles in $C_k(X)$ with pairwise disjoint supports.
+\end{defi}
+
+To explain the relation between the $k$-th Cheeger constant and the $k$-th disjoint cycle expansion of a polyhedral complex, we have to recall the notion of hitting sets and hitting numbers of families of sets and families of cycles and the cycle detection theorem (see \ref{proposition1}) which was stated by Kozlov in \cite{1}.
 
 \begin{defi}
 Let $V$ be some set and $\mathcal{F}\subseteq 2^V$ a family of subsets of $V$. A subset $P\subseteq V$ is called a \textbf{hitting set} of $\mathcal{F}$ if we have $P\cap F\neq\emptyset$ for all $F\in\mathcal{F}$. The minimal cardinality which a hitting set of $\mathcal{F}$ can attain is called the \textbf{hitting number} of $\mathcal{F}$, denoted by $\tau(\mathcal{F})$. For $v\in V$ and $F\in\mathcal{F}$ we say that $F$ \textbf{is hit by} $v$, if $v\in F$.
+\end{defi}
+
+\begin{defi}
+Let \(X\) be a polyhedral complex and \(\mathcal{F}\subseteq C_k(X)\) a family of \(k\)-chains. The \textbf{hitting sets} and the \textbf{hitting number} of \(\mathcal{F}\) are defined as the hitting sets and the hitting number of the family \(\left\{\supp(F):F\in\mathcal{F}\right\}\).
 \end{defi}
 
 \begin{prop}[The cycle detection theorem]\label{proposition1}
@@ -79,29 +130,7 @@ Since $\psi$ was chosen arbitrarily we are done.
 \end{proof}
 \end{prop}
 
-\begin{defi}
-Let $X$ be a simplicial complex and $k\geq 1$. Furthermore, let $\mathcal{F}\subset C_k(X)$ be a family of cycles, such that their supports are pairwise disjoint (i.e. $\supp(F)\cap\supp(F')=\emptyset$ for all $F,F'\in\mathcal{F}$, satisfying $F\neq F'$) and let
-\begin{small}
-\[
-P(\mathcal{F})\coloneqq\{\varphi\in C^k(X):|\supp(\varphi)\cap\supp(F)|=1\text{ for all }F\in\mathcal{F}\text{ and }\supp(\varphi)\subset\bigcup\limits_{F\in\mathcal{F}}\supp(F)\}
-\]
-\end{small}
-denote the set of all cochains constructed by all possible choices of one simplex per cycle in the family $\mathcal{F}$. Then we define
-\[
-\gamma_{\mathcal{F}}\coloneqq\frac{\min\limits_{\varphi\in P(\mathcal{F})}\|\delta^k(\varphi)\|}{|\mathcal{F}|}
-\]
-and we call
-\[
-\gamma_k(X)\coloneqq\min\limits_{\mathcal{F}\in\mathfrak{C}}\gamma_{\mathcal{F}}
-\]
-the $k$-th \textbf{disjoint cycle expansion} of $X$, where
-\begin{small}
-\[
-\mathfrak{C}\coloneqq\{\mathcal{F}\subset C_k(X):F\text{ is a cycle and }\supp(F)\cap\supp(F')=\emptyset\text{ for all }F,F'\in\mathcal{F}\:(F\neq F')\}
-\]
-\end{small}
-is the collection of all families of cycles in $C_k(X)$ with pairwise disjoint supports.
-\end{defi}
+The cycle detection theorem can now be used to describe a fundamental relation between the Cheeger constant and the disjoint cycle expansion.
 
 \begin{prop}\label{proposition2}
 Let $X$ be a simplicial complex and $k\geq 1$, then we have:
@@ -112,6 +141,8 @@ h_k(X)\leq\gamma_k(X)
 Let $\mathcal{F}\subset C_k(X)$ be a family of cycles with pairwise disjoint supports and $\varphi\in P(\mathcal{F})$. Then we have $\tau(\mathcal{F})=|\mathcal{F}|$ and by the cycle detection theorem we get $\|\varphi\|_{csy}=|\mathcal{F}|$. Hence, we have $h_k(X)\leq\gamma_k(X)$.
 \end{proof}
 \end{prop}
+
+\section{The main results}
 
 \begin{thm}\label{theorem1}
 Let $n\geq 3$ and $1\leq k\leq n-2$, then we have:
@@ -154,7 +185,7 @@ B_k\coloneqq\{(v_i,w_j):(k-1)c+1\leq i\leq kc\text{, }c(t-k)+1\leq j\leq c(t-k+1
 Now, each vertex from $A\cup B$ is only contained in edges from exactly one of the sets $B_k$. This means that for any $l=1,\ldots,c$ and any pair of edges $(v_i,w_j)\in B_{k_1}$ and $(v_{i'},w_{j'})\in B_{k_2}$ ($k_1\neq k_2$) the supports of the cycles $(v_i,w_j)+(v_i,x_l)+(w_j,x_l)$ and $(v_{i'},w_{j'})+(v_{i'},x_l)+(w_{j'},x_l)$ are disjoint. Furthermore, each set $B_k$ itself is a complete balanced bipartite graph (i.e. a graph in which each of the $c$ vertices from $A$ is adjacent to each of the $c$ vertices from $B$) so we can partition it into $c$ sets $B_k^1,\ldots,B_k^c$, such that all edges in $B_k^l$ are disjoint, for every $l=1,\ldots,c$. Thus, the supports of the cycles $(v_i,w_j)+(v_i,x_l)+(w_j,x_l)$ are pairwise disjoint for all $(v_i,w_j)\in B_k^l$. The family of all these cycles united with the cycles $C_{ij}$ we defined before gives a family of cycles with pairwise disjoint supports, such that every edge of $G_n(\lambda)$ is contained in exactly one cycle and every cycle containes exactly one of the edges from $G_n(\lambda)$. Since the number of cycles in this family equals the number of edges in $G_n(\lambda)$ and we know that we have $h(G_n(\lambda))=\frac{n}{3}$ by \cite{2} (Theorem 4.2.) we get $\gamma_1(\Delta^{[n]})\leq\frac{n}{3}$ and by Proposition \ref{proposition2} we have $\gamma_1(\Delta^{[n]})=\frac{n}{3}$.
 \end{proof}
 \end{thm}
-i
+
 \begin{expl}
 Let $n=10$ and consider the staircase graph $G_{10}(\lambda)$ with $\lambda=2\cdot\text{cor}(2)$ as shown in Figure \ref{figure1:Figure 1} ($v_i$ and $w_j$ are adjacent if and only if there is a box in column $i$ and row $j$ and the $x_i$'s are isolated vertices). Then, intuitively speaking, for every edge represented by a box for which there is no box on the other side of the diagonal
 \[
@@ -240,6 +271,8 @@ so we have
 \bibitem{1} Dmitry N. Kozlov, Roy Meshulam; Quantitative aspects of acyclicity
 
 \bibitem{2} Dmitry N. Kozlov; The first Cheeger constant of a simplex
+
+\bibitem{3} R. Meshulam, N. Wallach; Homological connectivity of random k-dimensional complexes
 
 \end{thebibliography}
 
