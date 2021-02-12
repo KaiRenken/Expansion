@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.29)  2 FEB 2021 09:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.29)  12 FEB 2021 15:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1026,8 +1026,8 @@ t/9 F\OT1/zplm/m/n/9 )\OMS/zplm/m/n/9 g
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (14.56903pt too wide) in paragraph at lines 177--179
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+Overfull \hbox (14.56903pt too wide) in paragraph at lines 181--183
 \T1/ppl/m/n/10 For all edges $\OML/zplm/m/it/10 e[] \OT1/zplm/m/n/10 = (\OML/zp
 lm/m/it/10 v[]\OT1/ppl/m/n/10 , \OML/zplm/m/it/10 w[]\OT1/zplm/m/n/10 )$ \T1/pp
 l/m/n/10 sat-is-fy-ing $\OML/zplm/m/it/10 i \OT1/zplm/m/n/10 + \OML/zplm/m/it/1
@@ -1036,13 +1036,13 @@ l/m/n/10 sat-is-fy-ing $\OML/zplm/m/it/10 i \OT1/zplm/m/n/10 + \OML/zplm/m/it/1
 zplm/m/it/10 v[]\OT1/ppl/m/n/10 , \OML/zplm/m/it/10 w[]\OT1/zplm/m/n/10 )$
  []
 
-[3]
-Overfull \hbox (15.65045pt too wide) detected at line 198
+
+Overfull \hbox (15.65045pt too wide) detected at line 202
 []
  []
 
 [4] [5]
-Underfull \hbox (badness 2181) in paragraph at lines 275--276
+Underfull \hbox (badness 2181) in paragraph at lines 279--280
 []\T1/ppl/m/n/10 R. Meshu-lam, N. Wal-lach; Ho-mo-log-i-cal con-nec-tiv-ity of 
 ran-dom k-
  []
@@ -1051,7 +1051,7 @@ ran-dom k-
 Here is how much of TeX's memory you used:
  15820 strings out of 494880
  300175 string characters out of 6179601
- 329595 words of memory out of 5000000
+ 328595 words of memory out of 5000000
  18769 multiletter control sequences out of 15000+600000
  56891 words of font info for 140 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
@@ -1068,7 +1068,7 @@ ic/mathpazo/fplmri.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
 uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (6 pages, 127255 bytes).
+Output written on main.pdf (6 pages, 128789 bytes).
 PDF statistics:
  75 PDF objects out of 1000 (max. 8388607)
  54 compressed objects within 1 object stream

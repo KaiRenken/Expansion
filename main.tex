@@ -150,7 +150,11 @@ Let $n\geq 3$ and $1\leq k\leq n-2$, then we have:
 \frac{n}{k+2}\leq\gamma_k(\Delta^{[n]})\leq\left\lceil\frac{n}{k+2}\right\rceil
 \]
 \begin{proof}
-To prove the lower bound, we only have to combine Proposition \ref{proposition2} with the fact that $h_k(\Delta^{[n]})\geq\frac{n}{k+2}$ holds (see \cite{2}).
+To prove the lower bound, we only have to combine Proposition \ref{proposition2} with the fact that $h_k(\Delta^{[n]})\geq\frac{n}{k+2}$ holds (see \cite{2}). To prove the lower bound, we only have to combine Proposition \ref{proposition2} with the fact that $h_k(\Delta^{[n]})\geq\frac{n}{k+2}$ holds (see \cite{2}). To prove the upper bound let $n$ be divisible by $k+2$. By Theorem \ref{theorem2} we know that we have $\gamma_k(\Delta^{[n]})=\frac{n}{k+2}$. Consider the set of cycles $\mathcal{F}$ and $\varphi\in P(\mathcal{F})$ as constructed in the proof of Theorem \ref{theorem2}. Now, remove an arbitrary non-isolated vertex (i.e. a vertex which participates in $\supp(\varphi)$, all simplices from $\supp(\varphi)$ which contain this vertex and all cycles from $\mathcal{F}$ which contain this vertex. We get a new family of cycles $\mathcal{F}'$ and a new $\varphi'\in P(\mathcal{F}')$ such that we have
+\[
+\frac{\|\delta^k(\varphi')\|}{|\mathcal{F}'|}=\frac{n}{k+2}=\left\lceil\frac{n-1}{k+2}\right\rceil.
+\]
+We can proceed removing vertices this way getting the same results.
 \end{proof}
 \end{thm}
 
