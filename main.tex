@@ -54,16 +54,16 @@ In \cite{3} Meshulam and Wallach proved the estimate
 \[
 \frac{n}{k+2}\leq h_k(\Delta^{[n]})\leq\left\lceil\frac{n}{k+2}\right\rceil
 \]
-for the $k$-th Cheeger constant of the simplex on $n$-vertices $\Delta^{[n]}$. They also showed that the lower bound is archieved if $n$ is divisible by $k+2$. Later in \cite{2} Kozlov showed, that for the first Cheeger constant of a simplex this lower bound is even archieved if $n$ is not a power of $2$ and gave an estimate for the case when $n$ is a power of $2$.\\
-In this paper we introduce the disjoint cycle expansion, which is a concept slightly different from the Cheeger constant in its definition, but easier to handle. We show that all exact values and estimates which are known for the Cheeger constant of the simplex stay the same for the disjoint cycle expansion. 
+where $h_k(\Delta^{[n]})$ denotes the $k$-th Cheeger constant of the simplex on $n$-vertices. They also showed that the lower bound is archieved if $n$ is divisible by $k+2$. In \cite{2} Kozlov showed, that for the first Cheeger constant of a simplex this lower bound is archieved in all cases when $n$ is not a power of $2$ and he gave an estimate for the case when $n$ is a power of $2$.\\
+In this paper we introduce the disjoint cycle expansion, another generalization of the classical Cheeger constant of a graph, which is easier to handle than that original generalization. We show that all exact values and estimates which are known for the Cheeger constant of the simplex equal those for the disjoint cycle expansion. 
 \end{abstract}
 
 \section{Introduction}
 
-Let us quickly recall the notion of the $k$-th Cheeger constant of a polyhedral complex. Through this paper we always consider $\mathbb{Z}_2$-coefficients.\\
+Let us quickly recall the notion of the $k$-th Cheeger constant of a simplicial complex. Through this paper we always consider chain- and cochain groups with $\mathbb{Z}_2$-coefficients.\\
 
 \begin{defi}
-Let $X$ be a polyhedral complex and $k\geq 1$. We denote the \textbf{norm} of a $k$-cochain $\varphi\in C^k(X)$ by $\|\varphi\|\coloneqq |\supp(\varphi)|$ and we call
+Let $X$ be a simplicial complex and $k\geq 1$. We denote the \textbf{norm} of a $k$-cochain $\varphi\in C^k(X)$ by $\|\varphi\|\coloneqq |\supp(\varphi)|$ and we call
 \[
 \|\varphi\|_{csy}\coloneqq\min\limits_{\psi\in C^{k-1}(X)}\|\delta^{k-1}(\psi)+\varphi\|
 \]
@@ -73,15 +73,15 @@ h_k(X)\coloneqq\min_{\substack{\varphi\in C^k(X)\\\varphi\notin\im(\delta^{k-1})
 \]
 \end{defi}
 
-Now, we can define the $k$-th disjoint cycle expansion of a polyhedral complex.
+Now, we can define the $k$-th disjoint cycle expansion of a simplicial complex.
 
 \begin{defi}
-Let $X$ be a polyhedral complex and $k\geq 1$. Furthermore, let $\mathcal{F}\subset C_k(X)$ be a family of cycles, such that their supports are pairwise disjoint (i.e. $\supp(F)\cap\supp(F')=\emptyset$ for all $F,F'\in\mathcal{F}$, satisfying $F\neq F'$) and let
-\begin{small}
+Let $X$ be a simplicial complex, $k\geq 1$, and $\mathcal{F}\subset C_k(X)$ a family of cycles, whose supports are pairwise disjoint. For such a family of cycles let
+\begin{footnotesize}
 \[
 P(\mathcal{F})\coloneqq\{\varphi\in C^k(X):|\supp(\varphi)\cap\supp(F)|=1\text{ for all }F\in\mathcal{F}\text{ and }\supp(\varphi)\subset\bigcup\limits_{F\in\mathcal{F}}\supp(F)\}
 \]
-\end{small}
+\end{footnotesize}
 denote the set of all cochains constructed by all possible choices of one simplex per cycle in the family $\mathcal{F}$. Then we define
 \[
 \gamma_{\mathcal{F}}\coloneqq\frac{\min\limits_{\varphi\in P(\mathcal{F})}\|\delta^k(\varphi)\|}{|\mathcal{F}|}
@@ -90,23 +90,17 @@ and we call
 \[
 \gamma_k(X)\coloneqq\min\limits_{\mathcal{F}\in\mathfrak{C}}\gamma_{\mathcal{F}}
 \]
-the $k$-th \textbf{disjoint cycle expansion} of $X$, where
-\begin{small}
-\[
-\mathfrak{C}\coloneqq\{\mathcal{F}\subset C_k(X):F\text{ is a cycle and }\supp(F)\cap\supp(F')=\emptyset\text{ for all }F,F'\in\mathcal{F}\:(F\neq F')\}
-\]
-\end{small}
-is the collection of all families of cycles in $C_k(X)$ with pairwise disjoint supports.
+the $k$-th \textbf{disjoint cycle expansion} of $X$, where $\mathfrak{C}$ is the collection of all families of cycles in $C_k(X)$ with pairwise disjoint supports.
 \end{defi}
 
-To explain the relation between the $k$-th Cheeger constant and the $k$-th disjoint cycle expansion of a polyhedral complex, we have to recall the notion of hitting sets and hitting numbers of families of sets and families of cycles and the cycle detection theorem (see \ref{proposition1}) which was stated by Kozlov in \cite{1}.
+To explain the relation between the $k$-th Cheeger constant and the $k$-th disjoint cycle expansion of a simplicial complex, we have to recall the notion of hitting sets and hitting numbers of families of sets and families of cycles and the cycle detection theorem (see \ref{proposition1}) which was stated by Kozlov in \cite{1}.
 
 \begin{defi}
-Let $V$ be some set and $\mathcal{F}\subseteq 2^V$ a family of subsets of $V$. A subset $P\subseteq V$ is called a \textbf{hitting set} of $\mathcal{F}$ if we have $P\cap F\neq\emptyset$ for all $F\in\mathcal{F}$. The minimal cardinality which a hitting set of $\mathcal{F}$ can attain is called the \textbf{hitting number} of $\mathcal{F}$, denoted by $\tau(\mathcal{F})$. For $v\in V$ and $F\in\mathcal{F}$ we say that $F$ \textbf{is hit by} $v$, if $v\in F$.
+Let $V$ be some set and $\mathcal{F}\subseteq 2^V$ a family of subsets of $V$. A subset $P\subseteq V$ is called a \textbf{hitting set} of $\mathcal{F}$ if we have $P\cap F\neq\emptyset$ for all $F\in\mathcal{F}$. The minimal cardinality which a hitting set of $\mathcal{F}$ can attain is called the \textbf{hitting number} of $\mathcal{F}$, denoted by $\tau(\mathcal{F})$.
 \end{defi}
 
 \begin{defi}
-Let \(X\) be a polyhedral complex and \(\mathcal{F}\subseteq C_k(X)\) a family of \(k\)-chains. The \textbf{hitting sets} and the \textbf{hitting number} of \(\mathcal{F}\) are defined as the hitting sets and the hitting number of the family \(\left\{\supp(F):F\in\mathcal{F}\right\}\).
+Let \(X\) be a simplicial complex and \(\mathcal{F}\subseteq C_k(X)\) a family of \(k\)-chains. The \textbf{hitting sets} and the \textbf{hitting number} of \(\mathcal{F}\) are defined as the hitting sets and the hitting number of the family \(\left\{\supp(F):F\in\mathcal{F}\right\}\).
 \end{defi}
 
 \begin{prop}[The cycle detection theorem]\label{proposition1}
